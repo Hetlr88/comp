@@ -14,12 +14,12 @@ if os.path.exists('BindhuEncoder/config.env'):
 
 # Variables
 
-api_id = int(os.environ.get("API_ID"))
-api_hash = os.environ.get("API_HASH")
-bot_token = os.environ.get("BOT_TOKEN")
+api_id = int(os.environ.get("API_ID",29452145))
+api_hash = os.environ.get("API_HASH","5a2784e571fe5043852d32396a34a13b")
+bot_token = os.environ.get("BOT_TOKEN","7445547849:AAHfX4_8TQ57cg71Q_l9ABoa6RfgfPWHgsE")
 
-database = os.environ.get("MONGO_URI")
-session = os.environ.get("MONGO_DB_NAME")
+database = os.environ.get("MONGO_URI","mongodb+srv://KannadaMagaa:KannadaMagaa@kannadamagaaclone.kweqbmy.mongodb.net/?retryWrites=true&w=majority")
+session = os.environ.get("MONGO_DB_NAME","comp")
 
 drive_dir = os.environ.get("DRIVE_DIR")
 index = os.environ.get("INDEX_URL")
@@ -27,13 +27,13 @@ index = os.environ.get("INDEX_URL")
 download_dir = os.environ.get("DOWNLOAD_DIR")
 encode_dir = os.environ.get("ENCODE_DIR")
 
-owner = list(set(int(x) for x in os.environ.get("OWNER_ID").split()))
-sudo_users = list(set(int(x) for x in os.environ.get("SUDO_USERS").split()))
+owner = list(set(int(x) for x in os.environ.get("OWNER_ID",6169288210).split()))
+sudo_users = list(set(int(x) for x in os.environ.get("SUDO_USERS",6169288210).split()))
 everyone = list(set(int(x) for x in os.environ.get("EVERYONE_CHATS").split()))
 all = everyone + sudo_users + owner
 
 try:
-    log = int(os.environ.get("LOG_CHANNEL"))
+    log = int(os.environ.get("LOG_CHANNEL",-1002248610571))
 except:
     log = owner
     print('Fill logs id 😞!')
